@@ -9,6 +9,7 @@
     --equals-btn: #ff6b6b;
     --text-color-wt: #ffffff;
     --text-color-bk: #000000;
+    --btn-delete: #ff4b4b;
 }
 
 * {
@@ -53,6 +54,7 @@
 
 .display-section {
     background-color: var(--display-background);
+    border-radius: 5px;
     width: 100%;
     height: 90px;
 }
@@ -84,4 +86,41 @@
     height: 64px;
     border: none;
     border-radius: 12px;
+}
+
+.number-btn {
+    font-size: 16px;
+    font-weight: 600;
+    background-color: var(--primary-number-btn);
+    color: var(--text-color-wt);
+}
+
+.btn-function {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#clear,
+#delete {
+    font-size: 16px;
+}
+
+#delete {
+    background-color: var(--btn-delete);
+    color: var(--text-color-wt);
+    font-weight: 600;
+}
+
+.operator {
+    font-size: 20px;
+    font-weight: 500;
+    background-color: var(--operator-btn);
+    color: var(--text-color-wt);
+}
+
+#equals {
+    background-color: var(--equals-btn);
+    color: var(--text-color-wt);
+    font-size: 20px;
+    font-weight: 600;
 }
