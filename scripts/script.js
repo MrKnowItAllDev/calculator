@@ -4,6 +4,7 @@ function main() {
     let curr = '';
     let next = '';
     let operator = '';
+    let equalClicked = false;
 
     const btn = function(b) {
         return document.querySelector(`#${b}`);
@@ -34,6 +35,7 @@ function main() {
                 display.textContent = next;
                 historyDisplay.textContent += ' '+ next;
             }
+            equalClicked = false;
         });
         btn.addEventListener('mouseover',(e) => {
             e.target.setAttribute('style', 'background-color: gray;');
@@ -57,6 +59,7 @@ function main() {
                 historyDisplay.textContent = `${curr} ${operator}`;
                 display.textContent = curr;
                 next = '';
+                equalClicked = false;
             }
         });
     }
@@ -70,9 +73,17 @@ function main() {
     });
 
     btnEquals.addEventListener('click', (e) => {
+        if (equalClicked) return;
         curr = perform(operator, curr, next);
+        equalClicked = true;
         next = '';
         operator = '';
+        display.textContent = curr;
+    });
+
+    btnNegate.addEventListener('click', (e) => {
+        if (next.length) return;
+        curr = curr * -1;
         display.textContent = curr;
     });
 }
