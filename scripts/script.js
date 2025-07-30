@@ -32,6 +32,7 @@ function main() {
             else {
                 next += btn.textContent;
                 display.textContent = next;
+                historyDisplay.textContent += ' '+ next;
             }
         });
         btn.addEventListener('mouseover',(e) => {
